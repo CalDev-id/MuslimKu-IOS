@@ -9,28 +9,51 @@ import SwiftUI
 
 struct ListView: View {
     
+    //memanggil environtmentobj dari listviewmodel(items)
     @EnvironmentObject var listViewModel: ListViewModel
-//    @State var items: [ItemModel] = [
-//        ItemModel(title: "First Title", isCompleted: false),
-//        ItemModel(title: "second Title", isCompleted: true),
-//        ItemModel(title: "third", isCompleted: true),
-//    ]
-    
+
     var body: some View {
-        List{
-            ForEach(listViewModel.items){ item in
-                ListRowView(item: item)
+                if !listViewModel.items.isEmpty {
+                    List {
+
+                ForEach(listViewModel.items) { item in
+                    ListRowView(item: item)
+                        .onTapGesture {
+                            withAnimation(.linear){
+                                listViewModel.updateItem(item: item)
+                            }
+                        }
+                }
+                .onDelete(perform: listViewModel.deleteItem)
+                .onMove(perform: listViewModel.moveItem)
             }
-            .onDelete(perform: listViewModel.deleteItem)
-            .onMove(perform: listViewModel.moveItem)
+            .listStyle(PlainListStyle())
+            .navigationBarItems(
+               leading: EditButton(),
+               trailing:
+                   NavigationLink("Add", destination: AddView())//direct ke add view
+           )
+            .navigationTitle("To Do List 📝")
         }
-        .listStyle(PlainListStyle())
-        .navigationBarItems(
-            leading: EditButton(),
-            trailing:
-                NavigationLink("Add", destination: AddView())
-        )
-        .navigationTitle("To Do List 📝")
+         else {
+             HStack{
+                 Spacer()
+                 Text("You don't have any to do list")
+                 Spacer()
+             }
+             
+             .navigationTitle("To Do List 📝")
+             .navigationBarItems(
+                 leading:
+                     listViewModel.items.isEmpty ?
+                                 nil :
+                                 AnyView(EditButton()),
+             trailing:
+                    NavigationLink("Add", destination: AddView()))//direct ke add view)
+        }
+        
+        
+        
     }
 }
 
@@ -38,7 +61,6 @@ struct ListView: View {
     NavigationView{
         ListView()
     }.environmentObject(ListViewModel())
-//    ListView()
 }
 
 

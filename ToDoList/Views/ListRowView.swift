@@ -24,5 +24,5 @@ struct ListRowView: View {
 }
 
 #Preview {
-  Text("ayam")
+  ListRowView(item: ItemModel(title: "ayam", isCompleted: false))
 }
