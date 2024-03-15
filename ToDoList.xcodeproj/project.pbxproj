@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E73E6392BA06A4A00AAD3F4 /* NoItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73E6382BA06A4A00AAD3F4 /* NoItemsView.swift */; };
 		2E9D0DE12B9EAEB3004C6CF1 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D0DE02B9EAEB3004C6CF1 /* ToDoListApp.swift */; };
 		2E9D0DE52B9EAEB4004C6CF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E9D0DE42B9EAEB4004C6CF1 /* Assets.xcassets */; };
 		2E9D0DE82B9EAEB4004C6CF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E9D0DE72B9EAEB4004C6CF1 /* Preview Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E73E6382BA06A4A00AAD3F4 /* NoItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemsView.swift; sourceTree = "<group>"; };
 		2E9D0DDD2B9EAEB3004C6CF1 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9D0DE02B9EAEB3004C6CF1 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
 		2E9D0DE42B9EAEB4004C6CF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				2E9D0DEF2B9EAFEC004C6CF1 /* ListView.swift */,
+				2E73E6382BA06A4A00AAD3F4 /* NoItemsView.swift */,
 				2E9D0DF32B9EC893004C6CF1 /* AddView.swift */,
 				2E9D0DF12B9EBC10004C6CF1 /* ListRowView.swift */,
 			);
@@ -178,6 +181,7 @@
 				2E9D0DFD2B9F1BDD004C6CF1 /* ListViewModel.swift in Sources */,
 				2E9D0DE12B9EAEB3004C6CF1 /* ToDoListApp.swift in Sources */,
 				2E9D0DF02B9EAFEC004C6CF1 /* ListView.swift in Sources */,
+				2E73E6392BA06A4A00AAD3F4 /* NoItemsView.swift in Sources */,
 				2E9D0DF22B9EBC10004C6CF1 /* ListRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

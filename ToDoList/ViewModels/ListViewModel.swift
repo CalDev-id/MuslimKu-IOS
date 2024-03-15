@@ -20,18 +20,28 @@ class ListViewModel: ObservableObject {
         }
     }
     let itemsKey: String = "items_list"
-//init dummy item agar dipanggil ketika initiation
+    
+    var hasBeenCalled = false
+    
     init(){
         getItems()
+//        if !hasBeenCalled {
+//            initRamadhan()
+//            hasBeenCalled = true
+//        }
+    }
+    
+    func initRamadhan(){
+        let newItems = [
+            ItemModel(title: "Solat subuh", isCompleted: false),
+            ItemModel(title: "Solat Dzuhur", isCompleted: false),
+            ItemModel(title: "Solat ashar", isCompleted: false),
+        ]
+        
+        items.append(contentsOf: newItems)
     }
     
     func getItems(){
-//        let newItems = [
-//            ItemModel(title: "First Title", isCompleted: false),
-//            ItemModel(title: "second Title", isCompleted: true),
-//            ItemModel(title: "third", isCompleted: true),
-//        ]
-//        items.append(contentsOf: newItems)
         guard
             let data = UserDefaults.standard.data(forKey: itemsKey),
             let savedItems = try? JSONDecoder().decode([ItemModel].self, from: data)
@@ -54,6 +64,11 @@ class ListViewModel: ObservableObject {
     func updateItem(item: ItemModel){
         if let index = items.firstIndex(where: { $0.id == item.id}) {
             items[index] = item.updateCompletion()
+        }
+    }
+    func updateTitle(item: ItemModel){
+        if let index = items.firstIndex(where: { $0.id == item.id}) {
+            items[index] = item.updateTitle()
         }
     }
     func saveItem(){

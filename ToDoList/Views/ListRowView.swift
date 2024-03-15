@@ -20,6 +20,8 @@ struct ListRowView: View {
         }
         .font(.title2)
         .padding(.vertical, 8)
+        .background(Color.red.opacity(0.0))
+        .listRowBackground(Color.green.opacity(0.0))
     }
 }
 

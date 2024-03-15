@@ -23,6 +23,7 @@ struct AddView: View {
                 TextField("Type something here...", text: $textFieldText)
                     .padding(.horizontal)
                     .frame(height: 55)
+                    .foregroundColor(.white)
                     .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
                 
@@ -34,13 +35,24 @@ struct AddView: View {
                         .font(.headline)
                         .frame(height: 55)
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                        .background(Color.accentColor)
+                        .background(Color.yellow.opacity(0.7))
                         .cornerRadius(10)
+                        .shadow(color: Color.yellow.opacity(0.7), radius: 30, x: 0, y: 20)
+                        
                 })
             }
             .padding(14)
-        }.navigationTitle("Add an item ✏️")
-            .alert(isPresented: $showAlert, content: getAlert)
+        }
+        .navigationTitle("Add Activity✏️")
+        .foregroundColor(.white)
+        .alert(isPresented: $showAlert, content: getAlert)
+        .background(
+            Image("bgramadhan2")
+                .resizable()
+//                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+    
+        )
     }
     
     func saveButtonPressed(){

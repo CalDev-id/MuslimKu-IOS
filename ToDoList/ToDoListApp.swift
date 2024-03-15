@@ -25,6 +25,13 @@ struct ToDoListApp: App {
             NavigationView{
                 ListView()
             }
+            .background(
+                Image("bg")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+            )
+            .navigationViewStyle(StackNavigationViewStyle())
             .environmentObject(listViewModel)
         }
     }
